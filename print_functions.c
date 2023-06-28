@@ -23,7 +23,7 @@ int printf_string(va_list l)
 	str = va_arg(l, char *);
 	if (str == NULL)
 	{
-		str = "";
+		str = "(null)";
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
