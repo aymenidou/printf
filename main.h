@@ -30,6 +30,15 @@ int printf_unsigned_int(va_list);
 int printf_octal(va_list);
 int printf_hexdecimal(va_list);
 int printf_heXdecimal(va_list);
+int printf_integer(va_list);
+int printf_number(va_list);
+int printf_reversed(va_list);
 
+/*Helper functions*/
+unsigned int base_len(unsigned int, int);
+char *rev_string(char *);
+void write_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int hex_check(int num, char x);
 
 #endif

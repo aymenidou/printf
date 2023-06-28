@@ -13,10 +13,13 @@ int _printf(const char *format, ...)
 		{"c", printf_char},
 		{"s", printf_string},
 		{"%", printf_percent},
+		{"d", printf_integer},
+		{"i", printf_integer},
 		{"u", printf_unsigned_int},
 		{"o", printf_octal},
 		{"x", printf_hexdecimal},
 		{"X", printf_heXdecimal},
+		{"r", printf_reversed},
 	};
 	va_list arg_list;
 

@@ -9,15 +9,13 @@
  */
 int analyser(const char *format, link_t fun_list[], va_list arg_list)
 {
-	int i, j, return_value, chars_printed;
+	int i, j, return_value, chars_printed = 0;
 
-	chars_printed = 0;
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
 		if (format[i] == '%') /*Checks for format specifiers*/
 		{
-			/*Iterates through struct to find the right func*/
-			for (j = 0; fun_list[j].symbol != NULL; j++)
+			for (j = 0; fun_list[j].symbol != NULL; j++)/*Iterates through struct to find the right func*/
 			{
 				if (format[i + 1] == fun_list[j].symbol[0])
 				{
