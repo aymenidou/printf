@@ -3,7 +3,7 @@
 
 /**
  * _printf - it's printf with some changes
- * @format: string input to be formatted 
+ * @format: string input to be formatted
  * Return: the number of characters printed
  */
 int _printf(const char *format, ...)

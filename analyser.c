@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * analyser - 
+ * analyser - analyse the format to search for special characters
  * @format: A string containing all the desired characters.
  * @fun_list: A list of all the posible functions.
  * @arg_list: A list containing all the argumentents passed to the program.
@@ -9,20 +9,21 @@
  */
 int analyser(const char *format, link_t fun_list[], va_list arg_list)
 {
-	int i, j, return_value, chars_printed = 0;
+	int i, j, val, chars_printed = 0;
 
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
 		if (format[i] == '%') /*Checks for format specifiers*/
 		{
-			for (j = 0; fun_list[j].symbol != NULL; j++)/*Iterates through struct to find the right func*/
+			for (j = 0; fun_list[j].symbol != NULL; j++)
+			/*Iterates to find the right func*/
 			{
 				if (format[i + 1] == fun_list[j].symbol[0])
 				{
-					return_value = fun_list[j].fun(arg_list);
-					if (return_value == -1)
+					val = fun_list[j].fun(arg_list);
+					if (val == -1)
 						return (-1);
-					chars_printed += return_value;
+					chars_printed += val;
 					break;
 				}
 			}

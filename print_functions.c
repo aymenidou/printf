@@ -70,7 +70,7 @@ int printf_unsigned_int(va_list l)
 		i %= div;
 		div /= 10;
 	}
-	
+
 	return (count);
 }
 
